@@ -4,10 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import books from './data/horrorBooks.json'
-import singleCard from "../Components/singleCard";
+import SingleCard from "./SingleCard";
 import { nanoid } from 'nanoid'
 
-class MainContainer extends Component {
+class LastRelase extends Component {
     constructor(props) {
         super(props)
     }
@@ -19,14 +19,14 @@ class MainContainer extends Component {
 
             <Container>
                 <Row>
-                    <Col>
+                    <Col  className="d-flex flex-wrap gap-3  ">
                         {books.map((book) => {
                             return (
-                                <singleCard
+                                <SingleCard
                                     key={book.asin}
                                     img={book.img}
                                     title={book.title}
-
+                                    price={book.price}
                                 />
                             )
                         })}
@@ -38,4 +38,4 @@ class MainContainer extends Component {
     }
 
 }
-export default MainContainer;
+export default LastRelase;

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import MyNav from "./Components/MyNav";
 import './App.css';
-import MainContent from "./Components/MainContent";
+import LastRelase from "./Components/LastRelase";
+import SingleCard from "./Components/SingleCard";
+import Welcome from "./Components/Welcome";
+import MyFooter from "./Components/MyFooter";
 
 class App extends Component {
   constructor(props) {
@@ -11,8 +14,11 @@ class App extends Component {
   render() {
     return (
       <>
+        
         <MyNav />
-        <MainContent />
+        <Welcome />
+        <LastRelase />
+        <MyFooter />
       
       </>
     )
