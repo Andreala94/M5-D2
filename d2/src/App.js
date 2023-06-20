@@ -9,15 +9,28 @@ import MyFooter from "./Components/MyFooter";
 class App extends Component {
   constructor(props) {
     super(props)
+
+
+    this.state = {
+      search: ""
+    }
+
   }
+
+    searchChange(input){
+     
+      this.setState({search: input})
+    }
+
+
 
   render() {
     return (
       <>
         
-        <MyNav />
+        <MyNav onSearchChange={(input)=>this.searchChange(input) }/>
         <Welcome />
-        <LastRelase />
+        <LastRelase release={this.state.search}/>
         <MyFooter />
       
       </>

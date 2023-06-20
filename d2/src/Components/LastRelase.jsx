@@ -12,6 +12,13 @@ class LastRelase extends Component {
         super(props)
     }
 
+    componentDidUpdate(){
+        console.log(this.props)
+    }
+
+
+
+
     render() {
 
 
