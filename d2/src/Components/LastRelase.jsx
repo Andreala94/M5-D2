@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import books from './data/horrorBooks.json'
 import SingleCard from "./SingleCard";
 import { nanoid } from 'nanoid'
 
@@ -12,9 +10,9 @@ class LastRelase extends Component {
         super(props)
     }
 
-    componentDidUpdate(){
-        console.log(this.props)
-    }
+    // componentDidUpdate(){
+    //     console.log(this.props)
+    // }
 
 
 
@@ -27,7 +25,7 @@ class LastRelase extends Component {
             <Container>
                 <Row>
                     <Col  className="d-flex flex-wrap gap-3  ">
-                        {books.map((book) => {
+                        {this.props.myBooks.map((book) => {
                             return (
                                 <SingleCard
                                     key={book.asin}

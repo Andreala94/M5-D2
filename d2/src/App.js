@@ -5,6 +5,7 @@ import LastRelase from "./Components/LastRelase";
 import SingleCard from "./Components/SingleCard";
 import Welcome from "./Components/Welcome";
 import MyFooter from "./Components/MyFooter";
+import books from './Components/data/horrorBooks.json'
 
 class App extends Component {
   constructor(props) {
@@ -12,25 +13,31 @@ class App extends Component {
 
 
     this.state = {
-      search: ""
+      
+      category: books,
     }
 
   }
 
-    searchChange(input){
-     
-      this.setState({search: input})
-    }
-
+    
+   resercFunc(event){
+    const {category } = this.state;
+    const bookfiltrer = category.filter((elemento)=>{
+     return elemento.title.toLowerCase().includes(event.target.value.toLowerCase())
+    })
+    this.setState({category: bookfiltrer})
+   }
 
 
   render() {
     return (
       <>
         
-        <MyNav onSearchChange={(input)=>this.searchChange(input) }/>
+        <MyNav mySearch={(input)=>{
+          this.resercFunc(input)
+        }}/>
         <Welcome />
-        <LastRelase release={this.state.search}/>
+        <LastRelase myBooks={this.state.category}/>
         <MyFooter />
       
       </>
@@ -39,3 +46,4 @@ class App extends Component {
 }
 
 export default App;
+// release={this.state.search}

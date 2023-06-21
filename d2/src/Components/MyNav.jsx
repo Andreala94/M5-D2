@@ -13,18 +13,9 @@ class MyNav extends Component {
 
     }
   
-         handleInputChange(event){
-            const {name, value}= event.target
-           this.props.onSearchChange(value)
-           
-        }
-
-      //  const filteredItems = items.filter(item =>
-      //     item.title.toLowerCase().includes(searchTerm.toLowerCase())
 
 
-
-    render() {
+   render() {
       return (
           <>
 
@@ -41,9 +32,13 @@ class MyNav extends Component {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
-              onChange={(event) =>this.handleInputChange(event)}
+              // onChange={(event) =>this.handleInputChange(event)}
+              onKeyUp={ this.props.mySearch}
+              
             />
-            <Button variant="outline-success bg-info">Search</Button>
+            <Button 
+            // onClick={this.handleInputChange(event)}
+            variant="outline-success bg-info">Search</Button>
           </Form>
          
               </Container>
