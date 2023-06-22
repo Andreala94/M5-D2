@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       
       category: books,
-    }
+    } 
 
   }
 
